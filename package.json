@@ -1,0 +1,23 @@
+{
+  "name": "github-api",
+  "version": "1.0.0",
+  "description": "Getting user profile information using the GitHub API",
+  "main": "index.js",
+  "scripts": {
+    "tsc-watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelMotaAlvess/Github-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelMotaAlvess/Github-API/issues"
+  },
+  "homepage": "https://github.com/RafaelMotaAlvess/Github-API#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
