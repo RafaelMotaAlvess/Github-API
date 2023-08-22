@@ -36,3 +36,30 @@ async function fetchUser(username: string) {
     );
   }
 }
+
+async function showUser(username: string) {
+  const user = users.find((user) => user.login === username);
+
+  if (typeof user === "undefined") {
+    console.log("User not found!");
+  } else {
+    const response = await fetch(user.repos_url);
+    const repositories: GithubRepoResponse[] = await response.json();
+
+    console.log(`id: ${user.id}\n
+    \nlogin: ${user.login}
+    \nname: ${user.name}
+    \nbio: ${user.bio}
+    \npublic repositories: ${user.public_repos}`);
+
+    let repoMessage = "";
+    repositories.forEach((repo) => {
+      repoMessage += `\nname: ${repo.name}
+        \ndescription: ${repo.description}
+        \nstars: ${repo.stargazers_count}
+        \nfork:${repo.fork ? "yes" : "no"}\n`;
+    });
+
+    console.log(repoMessage);
+  }
+}
