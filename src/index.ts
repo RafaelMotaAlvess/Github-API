@@ -63,3 +63,13 @@ async function showUser(username: string) {
     console.log(repoMessage);
   }
 }
+
+function showAllUsers() {
+  let message = "Users:\n";
+
+  users.forEach((user) => {
+    message += `- ${user.login}\n`;
+  });
+
+  console.log(message);
+}
